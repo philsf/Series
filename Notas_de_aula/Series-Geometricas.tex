@@ -188,4 +188,35 @@ Pense um pouco sobre a fórmula do somatório acima. Substitua $n=0$,
 $n=1$, etc, e encontre os primeiros termos para ter certeza que você a
 entendeu.
 
+\subsubsection{Convergência de uma série geométrica infinita}
+
+Qualquer série geométrica com razão $r$ menor que 1 em módulo é
+convergente. Se a razão for maior que 1 (em módulo), ou igual a 1 ou
+-1, então ela é divergente.
+
+\subsubsection{Soma finita}
+
+No nosso exemplo $r = \frac{1}{2} \ne 1$, então podemos calcular
+qualquer soma finita com a fórmula da seção \ref{sec:formulario}. Por
+exemplo, $S_{15}$:
+
+\begin{displaymath}
+  S_{15} = \sum_{n=0}^{15} 4\left(\frac{1}{2}\right)^n =
+  \frac{4\left(1-\left(\frac{1}{2}\right)^{15}\right)}{1-\frac{1}{2}} = 7.9998
+\end{displaymath}
+
+{\bf Exercícios:} Com a série do exemplo acima, verifique na
+calculadora que $S_4=7.5$ e $S_{10}=7.9922$.
+
+\subsubsection{Soma infinita}
+
+Observe que o módulo da razão
+$|r|=\left|\frac{1}{2}\right|=\frac{1}{2} <1$, então podemos aplicar a
+fórmula da seção \ref{sec:formulario}:
+
+\begin{displaymath}
+  S_\infty = \sum_{n=0}^\infty 4\left(\frac{1}{2}\right)^n =
+  \frac{4}{1-\frac{1}{2}} = \frac{4}{\frac{1}{2}} = 8
+\end{displaymath}
+
 \end{document}
