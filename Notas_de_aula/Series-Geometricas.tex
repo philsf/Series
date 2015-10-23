@@ -125,5 +125,32 @@ Mas com infinitos termos, precisamos de uma maneira mais compacta para
 efetuar essa operação, digamos, em uma calculadora. Precisamos
 encontrar uma {\em fórmula fechada}. Como fazer isso?
 
+Primeiro vamos tentar identificar alguma lógica que sirva para todos
+os termos. Para isto, basta observar que isto é o mesmo que
+multiplicar o termo anterior por $\frac{1}{2}$. Observe:
+
+% \begin{displaymath}
+%   4+ 2+ 1+ \frac{1}{2} +\frac{1}{4} + \frac{1}{8} + \ldots
+% \end{displaymath}
+% \begin{displaymath}
+%   4 + 4\times\frac{1}{2} + 4\times\frac{1}{2}^2 + 4\times\frac{1}{2}^3 + 4\times\frac{1}{2}^4 + 4\times\frac{1}{2}^5 + \ldots
+% \end{displaymath}
+
+\begin{displaymath}
+  \begin{array}{rccccccc}
+    &4&+2&+1&+\frac{1}{2}&+\frac{1}{4}&+\frac{1}{8}&+\ldots\\
+    &&&&&&&\\
+    =&4& + 4\times\left(\frac{1}{2}\right)&+4\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)&+4\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)& + \ldots& & \\
+    &&&&&&&\\
+    =&4& +4\times\left(\frac{1}{2}\right)&+4\times\left(\frac{1}{2}\right)^2&+4\times\left(\frac{1}{2}\right)^3&+4\times\left(\frac{1}{2}\right)^4&+4\times\left(\frac{1}{2}\right)^5&+\ldots
+  \end{array}
+\end{displaymath}
+\begin{displaymath}
+    = \sum_{n=0}^\infty 4\left(\frac{1}{2}\right)^n
+\end{displaymath}
+
+Pense um pouco sobre a fórmula do somatório acima. Substitua $n=0$,
+$n=1$ e encontre alguns dos primeiros termos para ter certeza que você
+entendeu.
 
 \end{document}
