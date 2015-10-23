@@ -224,6 +224,95 @@ fórmula da seção \ref{sec:formulario}:
 
 De onde vêm as fórmulas da seção \ref{sec:formulario}? Vamos
 desconstruir a lógica por trás delas para responder às perguntas do
-problema da seção \ref{sec:problema}
+problema da seção \ref{sec:problema}.
 
+Cada dose nova ingerida de medicamentol \copyright contém 100mg. Após
+o período, sobram $20\%=0.2$, quando você ingere a próxima dose. Temos
+então as quantidades após cada dose:
+
+\begin{displaymath}
+  \begin{array}{cccccl}
+    Q_1=&100&&&&=100 \\
+    Q_2=&100&+100\times 0.2&&&=120 \\
+    Q_3=&100&+100\times 0.2&+100\times (0.2)^2&&=124\\
+    Q_4=&100&+100\times 0.2&+100\times (0.2)^2&+100\times(0.2)^3&=124.80 \\
+    Q_5=&\ldots &&&&=124.96\\
+    Q_6=&\ldots&&&&=124.99
+  \end{array}
+\end{displaymath}
+
+{\bf Observação 1:} $Q_1$ tem um termo. $Q_2$ tem dois termos \ldots
+Qual é o maior expoente da razão $r=0.2$ em cada $Q_n$?
+
+{\bf Observação 2:} Para mim parece que a quantidade resultante após
+cada dose, está estabilizando. E para você?
+
+\hrulefill
+
+{\bf Exercícios:} Agora você já sabe conferir as quantidades $Q_5$ e
+$Q_6$ na sua calculadora. Mãos à obra!
+
+\hrulefill
+
+Obviamente daria muito trabalho fazer todas as somas e multiplicações
+para encontrar $Q_{10}$. Mesmo na calculadora. Uma fórmula fechada,
+permite encontrar a mesma resposta, de forma mais prática.
+
+Mas como podemos encontrar uma fórmula fechada (como a da seção
+\ref{sec:formulario}) para calcular uma quantidade $Q_n$ qualquer?
+
+Existe um ``truque''. Vamos tomar $Q_4$ como molde. Queremos encontrar
+uma fórmula fechada para $Q_4$, para calculá-lo. Assim, precisamos
+isolá-lo de um dos lados da igualdade.
+
+Multiplicando $Q_4$ pela razão $r=0.2$, temos:
+
+\begin{displaymath}
+  0.2Q_4 = 100\times (0.2)+100\times (0.2)^2+100\times (0.2)^3+100\times (0.2)^4
+\end{displaymath}
+
+O truque está em subtrair $Q_4$ dessa quantidade $0.2Q_4$. Nessa
+subtração {\bf todos} os termos que aparecem em ambos, se
+cancelam. Por exemplo, o termo $100\times 0.2$ aparece em ambas. O
+termo $100\times (0.2)^2$ também. Os únicos termos que não são comuns,
+são o $100$ (que aparece apenas em $Q_4$) e o $100\times (0.2)^4$ (que
+aparece apenas em $0.2Q_4$) (verifique!).
+
+Assim,
+
+\begin{displaymath}
+  Q_4 - 0.2Q_4 = 100 - 100\times (0.2)^4
+\end{displaymath}
+
+O somatório já ficou bem mais compacto e simpático, não? Agora,
+observe que em ambos os lados da igualdade, existem termos em
+comum. Eles podem ser colocados em evidência, para simplificar ainda
+mais a expressão.
+
+\begin{displaymath}
+  Q_4(1-0.2) = 100(1-0.2^4)
+\end{displaymath}
+
+\begin{displaymath}
+  Q_4 = \frac{100(1-0.2^4)}{(1-0.2)}
+\end{displaymath}
+
+Ora, acabamos de descobrir como {\bf encontrar} a fórmula para $Q_4$!
+Então, para um $Q_n$ qualquer, seria:
+
+\begin{displaymath}
+  Q_n = \frac{100(1-0.2^n)}{(1-0.2)}
+\end{displaymath}
+
+E o que acontece quando tomamos o limite quando $n\rightarrow \infty$?
+Como o módulo da razão $|r| = |0.2| = 0.2 <1$, sabemos que
+$\lim_{n\rightarrow\infty}0.2^n=0$. Então:
+
+\begin{displaymath}
+  Q_\infty = \lim_{n\rightarrow\infty} Q_n =
+  \lim_{n\rightarrow\infty}\frac{100(1-0.2^n)}{(1-0.2)} = \frac{100(1-0)}{(1-0.2)}=\frac{100}{(1-0.2)}=125
+\end{displaymath}
+
+{\bf Conclusão:} após um número de doses muito grande, a quantidade
+$Q_\infty$ de medicamentol no corpo estabiliza em 125mg.
 \end{document}
