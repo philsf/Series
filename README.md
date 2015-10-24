@@ -12,7 +12,7 @@ Apresentar aos alunos os fundamentos das Séries de Funções e suas aplicaçõe
 
 ##Planejamento de aulas de conteúdo
 
-* Séries Geométricas
+* [Séries Geométricas](https://github.com/philsf/Series/raw/master/Notas_de_aula/Series-Geometricas.pdf)
 * Séries de Taylor
 * Séries de Fourier
 
