@@ -1,0 +1,328 @@
+\everymath{\displaystyle}
+%\documentclass[pdftex,a4paper]{article}
+\documentclass[a4paper]{article}
+%%classes: article, report, book, proc, amsproc
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Misc
+% para acertar os acentos
+\usepackage[brazilian]{babel} 
+%\usepackage[portuguese]{babel} 
+% \usepackage[english]{babel}
+% \usepackage[T1]{fontenc}
+% \usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{fullpage}
+% \usepackage{graphicx} %See PDF section
+\usepackage{multicol}
+\setlength{\columnseprule}{0.5pt}
+\setlength{\columnsep}{20pt}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% PDF support
+
+\usepackage[pdftex]{color,graphicx}
+% %% Hyper-refs
+\usepackage[pdftex]{hyperref} % for printing
+% \usepackage[pdftex,bookmarks,colorlinks]{hyperref} % for screen
+
+%% \newif\ifPDF
+%% \ifx\pdfoutput\undefined\PDFfalse
+%% \else\ifnum\pdfoutput > 0\PDFtrue
+%%      \else\PDFfalse
+%%      \fi
+%% \fi
+
+%% \ifPDF
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage{aeguill}
+%%   \usepackage[pdftex]{graphicx,color}
+%%   \usepackage[pdftex]{hyperref}
+%% \else
+%%   \usepackage[T1]{fontenc}
+%%   \usepackage[dvips]{graphicx}
+%%   \usepackage[dvips]{hyperref}
+%% \fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Math
+\usepackage{amsmath,amsfonts,amssymb}
+% para usar R de Real do jeito que o povo gosta
+\usepackage{amsfonts} % \mathbb
+% para usar as letras frescas como L de Espaco das Transf Lineares
+% \usepackage{mathrsfs} % \mathscr
+
+% Oferecer seno e tangente em pt, com os comandos usuais.
+\providecommand{\sin}{} \renewcommand{\sin}{\hspace{2pt}\mathrm{sen}}
+\providecommand{\tan}{} \renewcommand{\tan}{\hspace{2pt}\mathrm{tg}}
+
+% dt of integrals = \ud t
+\newcommand{\ud}{\mathrm{\ d}}
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%% Título e cabeçalho
+%\noindent\parbox[c]{.15\textwidth}{\includegraphics[width=.15\textwidth]{logo}}\hfill
+\parbox[c]{.825\textwidth}{\raggedright%
+  \sffamily {\LARGE
+
+Séries: Notas de Aula
+
+Séries Geométricas
+
+\par\bigskip}
+{Prof: Felipe Figueiredo\par}
+{\url{http://sites.google.com/site/proffelipefigueiredo}\par}
+}
+
+Versão: \verb|20151023|
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objetivos de aprendizagem}
+
+Ao final desta aula o aluno deve saber reconhecer Séries Geométricas
+(tanto somatórios finitos e infinitos), e aplicá-las em problemas com
+somas incrementadas com razão constante.
+
+
+\section{Pré-requisitos da aula}
+
+Se $|r|<1$,
+\begin{displaymath}
+  \lim_{n \rightarrow \infty} r^n = 0
+\end{displaymath}
+
+\section{Conteúdo}
+
+O aluno deve consultar o livro texto na seção 9.1 para se aprofundar
+no conteúdo desta aula.
+
+\subsection{Formulário}
+\label{sec:formulario}
+
+\begin{displaymath}
+  S_n = \frac{a(1-r^n)}{1-r}, \textrm{ onde } r \ne 1
+\end{displaymath}
+
+\begin{displaymath}
+  S_\infty = \frac{a}{1-r}, \textrm{ onde } |r| < 1
+\end{displaymath}
+
+\subsection{Problema}
+\label{sec:problema}
+
+Suponha que você toma um medicamento na forma de cápsula ou
+comprimido. Todas as doses contém a mesma quantidade $Q$ de
+medicamento, mas conforme o tempo passa, seu corpo vai metabolizando
+ou excretando. Assim a quantidade presente no seu corpo vai
+diminuindo, e você precisa de uma nova dose, para manter sempre uma
+quantidade efetiva de medicamento no organismo. Como podemos descobrir
+qual é a quantidade de medicamento {\em presente} no seu corpo em cada
+instante de tempo?
+
+Para fixar idéias, considere que você toma um comprimido de 100mg de
+medicamentol \copyright\footnote{Medicamento extremamente fictício,
+  usado na falta de conhecimento} a cada 8 horas. Vamos assumir que é
+conhecido, para este medicamento, que após o período de 8h, restam
+apenas $20\%$ da dose de 100mg. Pergunta-se:
+
+\begin{enumerate}
+\item Qual é a quantidade $Q_4$ (mg) de medicamento após a ingestão da
+  quarta dose? E quantidade $Q_{10}$ ou $Q_{18}$? E $Q_n$?
+\item Após um número $n$ muito grande de doses, a quantidade $Q_n$
+  continua a crescer indefinidamente, ou estabiliza em algum limite
+  $Q_\infty$?
+\item Nos casos em que ela estabiliza, o que é necessário para que
+  isso ocorra?
+\end{enumerate}
+
+Você aprenderá a responder estas perguntas na seção
+\ref{sec:resolucao} desta aula.
+
+\subsection{Séries geométricas}
+
+Considere a seguinte soma infinita:
+
+\begin{displaymath}
+  4+ 2+ 1+ \frac{1}{2} +\frac{1}{4} + \frac{1}{8} + \ldots
+\end{displaymath}
+
+O que podemos observar sobre cada nova parcela nesta soma? Cada novo
+termo é a metade do anterior, certo?
+
+Mas com infinitos termos, precisamos de uma maneira mais compacta para
+efetuar essa operação, digamos, em uma calculadora. Precisamos
+encontrar uma {\em fórmula fechada}. Como fazer isso?
+
+Primeiro vamos tentar identificar alguma lógica que sirva para todos
+os termos. Para isto, basta observar que isto é o mesmo que
+multiplicar o termo anterior por $\frac{1}{2}$. Observe:
+
+% \begin{displaymath}
+%   4+ 2+ 1+ \frac{1}{2} +\frac{1}{4} + \frac{1}{8} + \ldots
+% \end{displaymath}
+% \begin{displaymath}
+%   4 + 4\times\frac{1}{2} + 4\times\frac{1}{2}^2 + 4\times\frac{1}{2}^3 + 4\times\frac{1}{2}^4 + 4\times\frac{1}{2}^5 + \ldots
+% \end{displaymath}
+
+\begin{displaymath}
+  \begin{array}{rccccccc}
+    &4&+2&+1&+\frac{1}{2}&+\frac{1}{4}&+\frac{1}{8}&+\ldots\\
+    &&&&&&&\\
+    =&4& + 4\times\left(\frac{1}{2}\right)&+4\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)&+4\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)\times\left(\frac{1}{2}\right)& + \ldots& & \\
+    &&&&&&&\\
+    =&4& +4\times\left(\frac{1}{2}\right)&+4\times\left(\frac{1}{2}\right)^2&+4\times\left(\frac{1}{2}\right)^3&+4\times\left(\frac{1}{2}\right)^4&+4\times\left(\frac{1}{2}\right)^5&+\ldots
+  \end{array}
+\end{displaymath}
+\begin{displaymath}
+    = \sum_{n=0}^\infty 4\left(\frac{1}{2}\right)^n
+\end{displaymath}
+
+Pense um pouco sobre a fórmula do somatório acima. Substitua $n=0$,
+$n=1$, etc, e encontre os primeiros termos para ter certeza que você a
+entendeu.
+
+\subsubsection{Convergência de uma série geométrica infinita}
+
+Qualquer soma finita, tem um resultado. A questão é quando temos
+infinitos termos sendo somados, quando isso resulta em um número?
+
+Qualquer série geométrica com razão $r$ menor que 1 em módulo é
+convergente. Se a razão for maior que 1 (em módulo), ou igual a 1 ou
+-1, então ela é divergente.
+
+\subsubsection{Soma finita}
+
+No nosso exemplo $r = \frac{1}{2} \ne 1$, então podemos calcular
+qualquer soma finita com a fórmula da seção \ref{sec:formulario}. Por
+exemplo, $S_{15}$:
+
+\begin{displaymath}
+  S_{15} = \sum_{n=0}^{15} 4\left(\frac{1}{2}\right)^n =
+  \frac{4\left(1-\left(\frac{1}{2}\right)^{15}\right)}{1-\frac{1}{2}} = 7.9998
+\end{displaymath}
+
+{\bf Exercícios:} Com a série do exemplo acima, verifique na
+calculadora que $S_4=7.5$ e $S_{10}=7.9922$.
+
+\subsubsection{Soma infinita}
+
+Observe que o módulo da razão
+$|r|=\left|\frac{1}{2}\right|=\frac{1}{2} <1$, então podemos aplicar a
+fórmula da seção \ref{sec:formulario}:
+
+\begin{displaymath}
+  S_\infty = \sum_{n=0}^\infty 4\left(\frac{1}{2}\right)^n =
+  \frac{4}{1-\frac{1}{2}} = \frac{4}{\frac{1}{2}} = 8
+\end{displaymath}
+
+\subsection{Resolução do problema}
+\label{sec:resolucao}
+
+De onde vêm as fórmulas da seção \ref{sec:formulario}? Vamos
+desconstruir a lógica por trás delas para responder às perguntas do
+problema da seção \ref{sec:problema}.
+
+Cada dose nova ingerida de medicamentol \copyright\ contém 100mg. Após
+o período, sobram $20\%=0.2$, quando você ingere a próxima dose. Temos
+então as quantidades após cada dose:
+
+\begin{displaymath}
+  \begin{array}{cccccl}
+    Q_1=&100&&&&=100 \\
+    Q_2=&100&+100\times 0.2&&&=120 \\
+    Q_3=&100&+100\times 0.2&+100\times (0.2)^2&&=124\\
+    Q_4=&100&+100\times 0.2&+100\times (0.2)^2&+100\times(0.2)^3&=124.80 \\
+    Q_5=&\ldots &&&&=124.96\\
+    Q_6=&\ldots&&&&=124.99
+  \end{array}
+\end{displaymath}
+
+{\bf Observação 1:} $Q_1$ tem um termo, $Q_2$ tem dois termos \ldots
+Qual é o maior expoente da razão $r=0.2$ em cada $Q_n$?
+
+{\bf Observação 2:} Para mim parece que a quantidade resultante após
+cada dose, está estabilizando.% E para você?
+
+%\hrulefill
+
+{\bf Exercícios:} Calcule $Q_5$ digitando os 5 termos na
+calculadora. Agora você também já sabe conferir $Q_6$ na sua
+calculadora usando a fórmula. Mãos à obra!
+
+\hrulefill
+
+Como você pode ver, daria muito trabalho fazer todas as somas e
+multiplicações para encontrar $Q_{10}$ mesmo na calculadora. Uma
+fórmula fechada, permite encontrar a mesma resposta, de forma mais
+prática.
+
+Mas como podemos encontrar uma fórmula fechada (como a da seção
+\ref{sec:formulario}) para calcular uma quantidade $Q_n$ qualquer?
+
+Existe um ``truque''. Vamos tomar $Q_4$ como molde. Queremos encontrar
+uma fórmula fechada para $Q_4$, para calculá-lo. Assim, precisamos
+isolá-lo de um dos lados da igualdade.
+
+Multiplicando $Q_4$ pela razão $r=0.2$, temos:
+
+\begin{displaymath}
+  0.2Q_4 = 100\times (0.2)+100\times (0.2)^2+100\times (0.2)^3+100\times (0.2)^4
+\end{displaymath}
+
+O truque está em subtrair $Q_4$ dessa quantidade $0.2Q_4$. Nessa
+subtração {\bf todos} os termos que aparecem em ambos, se
+cancelam. Por exemplo, o termo $100\times 0.2$ aparece em ambas. O
+termo $100\times (0.2)^2$ também. Os únicos termos que não são comuns,
+são o $100$ (que aparece apenas em $Q_4$) e o $100\times (0.2)^4$ (que
+aparece apenas em $0.2Q_4$) (verifique!).
+
+Assim,
+
+\begin{displaymath}
+  Q_4 - 0.2Q_4 = 100 - 100\times (0.2)^4
+\end{displaymath}
+
+O somatório já ficou bem mais compacto e simpático, não? Agora,
+observe que em ambos os lados da igualdade, existem termos em
+comum. Eles podem ser colocados em evidência, para simplificar ainda
+mais a expressão.
+
+\begin{displaymath}
+  Q_4(1-0.2) = 100(1-0.2^4)
+\end{displaymath}
+
+\begin{displaymath}
+  Q_4 = \frac{100(1-0.2^4)}{(1-0.2)}
+\end{displaymath}
+
+Ora, acabamos de descobrir como {\bf encontrar} a fórmula para $Q_4$!
+Então, para um $Q_n$ qualquer, seria:
+
+\begin{displaymath}
+  Q_n = \frac{100(1-0.2^n)}{(1-0.2)}
+\end{displaymath}
+
+E o que acontece quando tomamos o limite quando $n\rightarrow \infty$?
+Como o módulo da razão $|r| = |0.2| = 0.2 <1$, sabemos que
+$\lim_{n\rightarrow\infty}0.2^n=0$. Então:
+
+\begin{displaymath}
+  Q_\infty = \lim_{n\rightarrow\infty} Q_n =
+  \lim_{n\rightarrow\infty}\frac{100(1-0.2^n)}{(1-0.2)} = \frac{100(1-0)}{(1-0.2)}=\frac{100}{(1-0.2)}=125
+\end{displaymath}
+
+{\bf Conclusão:} após um número de doses muito grande, a quantidade
+$Q_\infty$ de medicamentol \copyright\ no corpo estabiliza em 125mg.
+\end{document}
