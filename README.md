@@ -18,9 +18,13 @@ Apresentar aos alunos os fundamentos das Séries de Funções e suas aplicaçõe
 
 ## Listas de exercícios e problemas
 
-* [Séries Geométricas](https://docs.google.com/document/d/1SzDV6EnP5WM0Ysb1eURae9CrinNkMA0r0BomVyj8CFQ/export?format=pdf)
-* [Séries de Taylor](https://docs.google.com/document/d/1XzQs6j4Ad07F6rBgE0AOMT9aIAoSHnYt9xfN3jVWtV4/export?format=pdf)
-* Séries de Fourier
+* Séries Geométricas - [PLT][PLT-SG]
+* Séries de Taylor - [PLT][PLT-ST]
+* Séries de Fourier - [PLT][PLT-SF]
+
+[PLT-SG]: https://docs.google.com/document/d/1SzDV6EnP5WM0Ysb1eURae9CrinNkMA0r0BomVyj8CFQ/export?format=pdf
+[PLT-ST]: https://docs.google.com/document/d/1XzQs6j4Ad07F6rBgE0AOMT9aIAoSHnYt9xfN3jVWtV4/export?format=pdf
+[PLT-SF]: https://docs.google.com/document/d/1j4BB95YHOSrUqWTZldF9OmlnJR9yxL-ms233grEE-KM/export?format=pdf
 
 ## Licensa
 Todo o material contido aqui é distribuído sob a licensa [Creative Commons Atribuição](http://creativecommons.org/licenses/by/4.0/deed.pt_BR)
