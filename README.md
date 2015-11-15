@@ -4,7 +4,9 @@ Este é o repositório das Disciplina de Equações Diferenciais e Séries do pr
 
 A divulgação do material para os alunos é feita pelo endereço: https://sites.google.com/site/proffelipefigueiredo/anhanguera/disciplinas/equacoes-diferenciais
 
-Obs: o planejamento central é feito no repositório [EDO](https://github.com/philsf/EDO)
+Obs: o planejamento central é feito no repositório [EDO][EDO-repo]
+
+[EDO-repo]: https://github.com/philsf/EDO
 
 ## Objetivo
 
@@ -29,5 +31,6 @@ Apresentar aos alunos os fundamentos das Séries de Funções e suas aplicaçõe
 [PLT-SF]: https://docs.google.com/document/d/1j4BB95YHOSrUqWTZldF9OmlnJR9yxL-ms233grEE-KM/export?format=pdf
 
 ## Licensa
-Todo o material contido aqui é distribuído sob a licensa [Creative Commons Atribuição](http://creativecommons.org/licenses/by/4.0/deed.pt_BR)
+Todo o material contido aqui é distribuído sob a licensa [Creative Commons Atribuição][]
 
+[Creative Commons Atribuição]: http://creativecommons.org/licenses/by/4.0/deed.pt_BR
