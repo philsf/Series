@@ -164,4 +164,50 @@ Como estamos aproximando $f(x)$ em torno de $x=0$, podemos simplificar a express
   P_5(x) = 1+ x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!}
 \end{displaymath}
 
+{\bf Exemplo:} Calcular o polinômio de Taylor $P_7(x)$ de $f(x)=\sin x$ em torno de $x=0$.
+
+Neste exemplo precisamos dos valores das derivadas do seno até a sétima derivada ($f^{(vii)}(x)$).
+Felizmente, no caso do seno e do cosseno, não precisamos derivar tantas vezes!
+
+\begin{multicols}{2}
+
+Derivadas de $f(x)$:
+
+  \begin{tabular}{rcl}
+    $f'(x)$ &=& $\cos x$\\
+    $f''(x)$ &=& $-\sin x$\\
+    $f'''(x)$ &=& $-\cos x$\\
+    $f^{(iv)}(x)$ &=& $\sin x$\\
+    $f^{(v)}(x)$ &=& $\cos x$\\
+    $f^{(vi)}(x)$ &=& $-\sin x$\\
+    $f^{(vii)}(x)$ &=& $-\cos x$\\
+  \end{tabular}
+
+  \columnbreak
+
+Valores das derivadas:
+
+  \begin{tabular}{rcl}
+    $f(0)$ &= $\sin 0$ =& 0\\
+    $f'(0)$ &=& 1\\
+    $f''(0)$ &=& 0\\
+    $f'''(0)$ &=& -1\\
+    $f^{(iv)}(0)$ &=& 0\\
+    $f^{(v)}(0)$ &=& 1\\
+    $f^{(vi)}(0)$ &=& 0\\
+    $f^{(vii)}(0)$ &=& -1\\
+  \end{tabular}
+\end{multicols}
+
+Agora basta substituir os valores das derivadas na fórmula acima.
+Como $a=0$, temos:
+
+$P_7(x) = 0+ 1(x-0) + \frac{0}{2!}(x-0)^2 + \frac{-1}{3!}(x-0)^3 + \frac{0}{4!}(x-0)^4 + \frac{1}{5!}(x-0)^5 + \frac{0}{6!}(x-0)^6 + \frac{-1}{7!}(x-0)^7$
+
+Como estamos aproximando $f(x)$ em torno de $x=0$, podemos simplificar a expressão acima e encontrar:
+
+\begin{displaymath}
+  P_7(x) = x  - \frac{x^3}{3!}  + \frac{x^5}{5!} - \frac{x^7}{7!}
+\end{displaymath}
+
 \end{document}
