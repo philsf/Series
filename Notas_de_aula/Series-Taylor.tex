@@ -122,15 +122,18 @@ A fórmula de Taylor é uma maneira de encontrar os coeficientes dos monômios q
 
 Se tivermos a série de potências completa, com {\em todas} as potências de $0$ até $\infty$, então a função é {\em igual} a sua série de Taylor perto do ponto de referência $x=a$.
 Se truncarmos a série em alguma potência $n$ qualquer, temos então o polinômio de Taylor, que é uma {\em aproximação} da função próximo de $x=a$.
+Quanto {\em maior} for o grau $n$ escolhido para o polinômio, {\em melhor} será a aproximação.
 
 Vejamos alguns exemplos de como calcular alguns polinômios de Taylor.
 
 \hrulefill
 
-{\bf Exemplo:} Calcular o polinômio de Taylor $P_5(x)$ de $f(x)=e^x$, em torno de $x=0$.
+{\bf Exemplo:}
+
+Calcular o polinômio de Taylor $P_5(x)$ de $f(x)=e^x$, em torno de $x=0$.
 
 Precisamos calcular todas as derivadas até a quinta ($f^{(v)}(x)$).
-Como a derivada desta função é igual a ela própria, todas as derivadas são iguais:
+Como a derivada desta função é igual a ela própria, todas as derivadas são iguais. Assim como as derivadas são iguais, obviamente os valores das mesmas também serão iguais em $x=0$.
 
 \begin{multicols}{2}
 
@@ -169,7 +172,11 @@ Como estamos aproximando $f(x)$ em torno de $x=0$, podemos simplificar a express
   P_5(x) = 1+ x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!}
 \end{displaymath}
 
-{\bf Exemplo:} Calcular o polinômio de Taylor $P_7(x)$ de $f(x)=\sin x$ em torno de $x=0$.
+\hrulefill
+
+{\bf Exemplo:}
+
+Calcular o polinômio de Taylor $P_7(x)$ de $f(x)=\sin x$ em torno de $x=0$.
 
 Neste exemplo precisamos dos valores das derivadas do seno até a sétima derivada ($f^{(vii)}(x)$).
 Felizmente, no caso do seno e do cosseno, não precisamos derivar tantas vezes!
