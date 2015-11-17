@@ -115,10 +115,17 @@ P_n(x) = f(a) + f'(a)(x-a) + \frac{f''(a)}{2!}(x-a)^2 + \frac{f'''(a)}{3!}(x-a)^
 \subsection{Coeficientes do polinômio de Taylor}
 
 Seja $f(x)$ uma função infinitamente derivável no ponto $x=a$.
-A série de Taylor é uma maneira de representar a função $f(x)$ como uma série de potências $x^n$, que é uma soma infinita de funções.
+A série de Taylor é uma maneira de representar a função $f(x)$ como uma série de potências, que é uma soma infinita de monômios $x^n$.
 
 Como todos os monômios $x^n$ são os mesmos para qualquer função $f(x)$, o que difere duas funções são os coeficientes destas potências.
-A fórmula de Taylor é uma maneira de encontrar os coeficientes que determinam a função de interesse, usando suas derivadas no ponto $x=a$.
+A fórmula de Taylor é uma maneira de encontrar os coeficientes dos monômios que determinam a função de interesse, usando as derivadas de $f(x)$ no ponto $x=a$.
+
+Se tivermos a série de potências completa, com {\em todas} as potências de $0$ até $\infty$, então a função é {\em igual} a sua série de Taylor perto do ponto de referência $x=a$.
+Se truncarmos a série em alguma potência $n$ qualquer, temos então o polinômio de Taylor, que é uma {\em aproximação} da função próximo de $x=a$.
+
+Vejamos alguns exemplos de como calcular alguns polinômios de Taylor.
+
+\hrulefill
 
 {\bf Exemplo:} Calcular o polinômio de Taylor $P_5(x)$ de $f(x)=e^x$, em torno de $x=0$.
 
